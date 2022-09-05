@@ -1,14 +1,14 @@
-import promptSync from 'prompt-sync';
+import prompt from 'prompt-sync';
 
 console.debug("\nBem vindo ao projeto - 🅿🆁🅾🅵🅸🆂🅸🅾🅽🅰🅸🆂 🅳🅰 🆂🅰ú🅳🅴\n");
 
-const prompt = promptSync();
+const input = prompt();
 
-console.debug("Opções\n" +
-    " 1 - Bla bla bla\n" +
-    " 2 - Bla bla bla\n" +
-    " 3 - Bla bla bla\n");
+console.debug("------------Funcionalidades------------\n" +
+    " 1 - Cadastrar Paciente\n" +
+    " 2 - Remover Paciente\n" +
+    " 3 - Listar Pacientes");
 
-let option: Number = parseInt(prompt("\nInforme a opção desejada: "));
+let option: Number = parseInt(input("\nInforme a opção desejada: "));
 
 console.debug(option);
