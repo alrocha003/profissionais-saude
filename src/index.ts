@@ -6,29 +6,32 @@ console.debug("\nBem vindo ao projeto - 🅿🆁🅾🅵🅸🆂🅸🅾🅽🅰
 let input = prompt();
 let option: number = 0;
 
-while (option != 9) {
-  console.log(
-    "------------Funcionalidades------------\n" +
-      " 1 - Cadastrar Paciente\n" +
-      " 2 - Remover Paciente\n" +
-      " 3 - Listar Pacientes"
-  );
+while (option != 4) {
+  console.log('+========= Lista Funcionalidades =========+');
+  console.log('|1. Cadastrar Paciente          |');
+  console.log('|2. Cadastrar Médico            |');
+  console.log('|3. Listar Paciente/Médico      |');
+  console.log('|4. Sair                        |');
+  console.log('+================================+')
 
-  let option: Number = parseInt(input("\nInforme a opção desejada: "));
+  option = +input("Escolha uma funcionalidade")
 
   switch (option) {
     case 1:
-      console.log(input("\nInsira o nome: "));
+      console.log("Insira o nome do Paciente: ");
       break;
     case 2:
-      console.log("digite o nome do usuário");
+      console.log("Insira o nome do Médico");
       break;
     case 3:
-      console.log("lista dos pacientes");
+      console.log("Lista Pacientes/Médicos");
       break;
+    case 4:
+      console.log("Sair");
+        break;
     default:
       break;
   }
 }
 
-console.debug(option);
+console.log('Acabou!');
