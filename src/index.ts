@@ -1,13 +1,13 @@
 import prompt from "prompt-sync";
-import Doctor from "./Doctor";
-import Patient from "./Patient";
+import Cadastra from "./commons/function-cadastro";
 
 
 console.debug("\nBem vindo ao projeto - 🅿🆁🅾🅵🅸🆂🅸🅾🅽🅰🅸🆂 🅳🅰 🆂🅰ú🅳🅴\n");
 
 let input = prompt();
 let option: number = 0;
-let listaUsuarios: Array<IUser> = [];
+let cadastra = new Cadastra()
+
 
 while (option != 4) {
   console.log('+========= Lista Funcionalidades =========+');
@@ -21,40 +21,13 @@ while (option != 4) {
   
   switch (option) {
     case 1:
-      let nomeEsobrenomePaciente = input('Digite o Nome e Sobrenome do Paciente : ')
-      let emailPaciente = input('Digite o Email: ')
-      let celularPaciente = input('Digite o celular: ')
-      let dataNascimentoPaciente = input('Digite a Data de Nascimento: ')
-      let pesoPaciente = input('Digite o Peso: ')
-      let alturaPaciente = input('Digite a Altura: ')
-      let novoPaciente = new Patient(nomeEsobrenomePaciente,
-        emailPaciente,
-        celularPaciente,
-        dataNascimentoPaciente,
-        pesoPaciente,
-        alturaPaciente)
-        listaUsuarios.push(novoPaciente)
+      cadastra.cadastroPaciente()
       break;
     case 2:
-      let nomeEsobrenomeMedico = input('Digite o Nome e Sobrenome do Médico : ')
-      let emailMedico = input('Digite o Email: ')
-      let celularMedico = input('Digite o celular: ')
-      let dataNascimentoMedico = input('Digite a Data de Nascimento: ')
-      let crm = input('Digite o CRM: ')
-      let especialidade = input('Digite a Especialidade: ')
-      let novoMedico = new Doctor(nomeEsobrenomeMedico,
-        emailMedico,
-        celularMedico,
-        dataNascimentoMedico,
-        crm,
-        especialidade,)
-        listaUsuarios.push(novoMedico)
+      cadastra.cadastroMedico()
       break;
     case 3:
-      for(let i = 0; i< listaUsuarios.length; i++ ){
-       console.table(listaUsuarios[i].exibeDados())
-        
-      }
+      cadastra.listar()
       break;
     case 4:
       console.log("Sair");
@@ -65,3 +38,6 @@ while (option != 4) {
 }
 
 console.log('Acabou!');
+
+//todo : criar o "remover" e "atualizar" 
+// requisicao de exame (Pesquisa)
