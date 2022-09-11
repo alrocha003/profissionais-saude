@@ -1,21 +1,19 @@
 export default class User {
     constructor(
-      public nome: string,
-      public sobrenome: string,
+      public nomeSobrenome: string,
       public email: string,
-      public celular: number,
-      public dataNascimento: number
+      public celular: string,
+      public dataNascimento: string
       
     ) {
-      this.nome = nome,
-      this.sobrenome = sobrenome,
+      this.nomeSobrenome = nomeSobrenome,
       this.email = email,
       this.celular = celular
       this.dataNascimento = dataNascimento
     }
   
      exibeDados(): string {
-      return this.nome + this.sobrenome + this.email + this.celular;
+      return this.nomeSobrenome  + ' ' + this.email + ' ' + this.celular;
     }
 
   }
