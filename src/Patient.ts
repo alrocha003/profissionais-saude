@@ -1,19 +1,23 @@
 import User from "./User";
 
-export default class Patient extends User {
+export default class Patient extends User implements IUser {
   constructor(
-    public nome: string,
-    public sobrenome: string,
+    public nomeSobrenome: string,
     public email: string,
-    public celular: number,
-    public dataNascimento: number,
-    public peso: number,
-    public altura: number
+    public celular: string,
+    public dataNascimento: string,
+    public peso: string,
+    public altura: string
   ) {
-    super(nome, sobrenome, email, celular, dataNascimento);
+    super(nomeSobrenome, email, celular, dataNascimento);
     this.peso = peso;
     this.altura = altura;
   }
+
+  exibeDados(): string {
+    return this.nomeSobrenome  + ' ' + this.email + ' ' + this.celular + ' ' + this.dataNascimento + ' ' + this.peso + ' '+ this.altura;
+  }
+
 }
 
 
