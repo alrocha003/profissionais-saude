@@ -4,7 +4,7 @@ import Patient from "../Patient";
 
 
 
-export default class Cadastra {
+export class Cadastra {
   input = prompt();
   option: number = 0;
   listaUsuarios: Array<IUser> = [];
@@ -45,3 +45,19 @@ export default class Cadastra {
 
 
 }
+
+export class Remover {
+  input = prompt();
+  option: number = 0;
+  listaUsuarios: Array<IUser> = [];
+  remove() {
+    let nomeSobrenome = this.input('Digite o nome')
+    let index = this.listaUsuarios.includes({nomeSobrenome})
+    let indexof = this.listaUsuarios.indexOf({nomeSobrenome})
+    if(!index){
+      console.log(`Esse ${nomeSobrenome} não existe no banco de dados!`)
+    } else if(index){
+      this.listaUsuarios.splice(indexof,1)
+      console.log('Esse cadastro foi removido')
+    }
+}}
