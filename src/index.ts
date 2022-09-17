@@ -1,43 +1,42 @@
 import prompt from "prompt-sync";
-import { Cadastra, Remover } from "./commons/function-cadastro";
+import { Cadastra } from "./commons/function-cadastro";
 
 console.debug("\nBem vindo ao projeto - 🅿🆁🅾🅵🅸🆂🅸🅾🅽🅰🅸🆂 🅳🅰 🆂🅰ú🅳🅴\n");
 
 let input = prompt();
 let option: number = 0;
 let cadastra = new Cadastra();
-let remover = new Remover()
 
 while (option != 5) {
-  console.log("+========= Lista Funcionalidades =========+");
-  console.log("|1. Cadastrar Paciente          |");
-  console.log("|2. Cadastrar Médico            |");
-  console.log("|3. Listar Paciente/Médico      |");
-  console.log("|4. Remover cadastro            |");
-  console.log("|5. Sair                        |");
-  console.log("+================================+");
+    console.log("+========= Lista Funcionalidades =========+");
+    console.log("|1. Cadastrar Paciente          |");
+    console.log("|2. Cadastrar Médico            |");
+    console.log("|3. Listar Paciente/Médico      |");
+    console.log("|4. Remover cadastro            |");
+    console.log("|5. Sair                        |");
+    console.log("+================================+");
 
-  option = +input("Escolha uma funcionalidade : --> ");
+    option = +input("Escolha uma funcionalidade : --> ");
 
-  switch (option) {
-    case 1:
-      cadastra.cadastroPaciente();
-      break;
-    case 2:
-      cadastra.cadastroMedico();
-      break;
-    case 3:
-      cadastra.listar();
-      break;
-    case 4:
-     remover.remove()
-      break;
-    case 5:
-      console.log("Sair");
-      break;
-    default:
-      break;
-  }
+    switch (option) {
+        case 1:
+            cadastra.cadastroPaciente();
+            break;
+        case 2:
+            cadastra.cadastroMedico();
+            break;
+        case 3:
+            cadastra.listar();
+            break;
+        case 4:
+            cadastra.remove()
+            break;
+        case 5:
+            console.log("Sair");
+            break;
+        default:
+            break;
+    }
 }
 
 console.log("Acabou!");
