@@ -1,7 +1,7 @@
-interface IUser{
+interface IUser {
     nomeSobrenome: string;
-    email: string;
-    celular: string;
+    email?: string;
+    celular?: string;
 
     exibeDados(): string;
 

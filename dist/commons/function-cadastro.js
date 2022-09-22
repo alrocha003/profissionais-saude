@@ -3,6 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+
+exports.Cadastra = void 0;
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
 const Doctor_1 = __importDefault(require("../Doctor"));
 const Patient_1 = __importDefault(require("../Patient"));
@@ -33,5 +35,34 @@ class Cadastra {
         let novoPaciente = new Patient_1.default(nomeEsobrenomePaciente, emailPaciente, celularPaciente, dataNascimentoPaciente, pesoPaciente, alturaPaciente);
         this.listaUsuarios.push(novoPaciente);
     }
+
 }
-exports.default = Cadastra;
+    remove() {
+        let nomeSobrenome = this.input('Digite o nome: \t');
+        let user = this.listaUsuarios.find(u => u.nomeSobrenome == nomeSobrenome);
+        if (user === undefined) {
+            console.log(`Esse ${nomeSobrenome} não existe no banco de dados!`);
+        }
+        else {
+            this.listaUsuarios = this.listaUsuarios.filter(u => u.nomeSobrenome !== nomeSobrenome);
+            console.log('Esse cadastro foi removido');
+        }
+    }
+}
+exports.Cadastra = Cadastra;
+// export class Remover {
+//   input = prompt();
+//   option: number = 0;
+//   listaUsuarios: Array<IUser> = [];
+//   remove() {
+//     let nomeSobrenome = this.input('Digite o nome')
+//     let index = this.listaUsuarios.includes({ nomeSobrenome })
+//     let indexof = this.listaUsuarios.indexOf({ nomeSobrenome })
+//     if (!index) {
+//       console.log(`Esse ${nomeSobrenome} não existe no banco de dados!`)
+//     } else if (index) {
+//       this.listaUsuarios.splice(indexof, 1)
+//       console.log('Esse cadastro foi removido')
+//     }
+//   }
+// }
