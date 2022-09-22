@@ -13,11 +13,10 @@ class Patient extends User_1.default {
         this.dataNascimento = dataNascimento;
         this.peso = peso;
         this.altura = altura;
+        this.exibeDados = () => `Nome: ${this.nomeSobrenome} - E-mail: ${this.email} - Celular: 
+    ${this.celular} - Data Nascimento: ${this.dataNascimento} - Peso: ${this.peso} - Altura: ${this.altura}`;
         this.peso = peso;
         this.altura = altura;
-    }
-    exibeDados() {
-        return this.nomeSobrenome + ' ' + this.email + ' ' + this.celular + ' ' + this.dataNascimento + ' ' + this.peso + ' ' + this.altura;
     }
 }
 exports.default = Patient;

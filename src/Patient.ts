@@ -14,9 +14,8 @@ export default class Patient extends User implements IUser {
     this.altura = altura;
   }
 
-  exibeDados(): string {
-    return this.nomeSobrenome  + ' ' + this.email + ' ' + this.celular + ' ' + this.dataNascimento + ' ' + this.peso + ' '+ this.altura;
-  }
+  exibeDados = (): string => `Nome: ${this.nomeSobrenome} - E-mail: ${this.email} - Celular: 
+    ${this.celular} - Data Nascimento: ${this.dataNascimento} - Peso: ${this.peso} - Altura: ${this.altura}`;
 
 }
 

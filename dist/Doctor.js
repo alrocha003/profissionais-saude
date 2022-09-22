@@ -13,11 +13,9 @@ class Doctor extends User_1.default {
         this.dataNascimento = dataNascimento;
         this.crm = crm;
         this.especialidade = especialidade;
+        this.exibeDados = () => `Nome: ${this.nomeSobrenome} - E-mail: ${this.email} - Celular: ${this.celular} - Data Nascimento: ${this.dataNascimento} - CRM: ${this.crm} - Especialidade: ${this.especialidade}`;
         this.crm = crm;
         this.especialidade = especialidade;
-    }
-    exibeDados() {
-        return this.nomeSobrenome + ' ' + this.email + ' ' + this.celular + ' ' + this.dataNascimento + ' ' + this.crm + ' ' + this.especialidade;
     }
 }
 exports.default = Doctor;
