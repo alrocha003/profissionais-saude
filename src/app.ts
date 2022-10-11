@@ -1,7 +1,13 @@
 import express, { Express, Request, response, Response } from 'express';
-
+import Database from './database/db';
+import UserModel from './models/user';
 const app: Express = express();
 const port = 3000;
+
+const db: Database = new Database();
+
+let user = new UserModel(db.db, 'Tais Virissimo Rocha', 'Empresária', 'taverissimo@gmail.com', 28);
+user.save();
 
 app.use(express.static('public'));
 app.set('views', `${__dirname}/views`);
@@ -22,5 +28,5 @@ app.get('/listar', (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+    console.log(`⚡️[server]: Server is running at http://localhost:${port}/login`);
 });
