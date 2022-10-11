@@ -10,6 +10,7 @@ const port = 3000;
 const db = new db_1.default();
 db.createCollection();
 //db.getUsers();
+
 app.use(express_1.default.static('public'));
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
