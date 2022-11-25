@@ -3,7 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-
 exports.Cadastra = void 0;
 const prompt_sync_1 = __importDefault(require("prompt-sync"));
 const Doctor_1 = __importDefault(require("../Doctor"));
@@ -35,8 +34,6 @@ class Cadastra {
         let novoPaciente = new Patient_1.default(nomeEsobrenomePaciente, emailPaciente, celularPaciente, dataNascimentoPaciente, pesoPaciente, alturaPaciente);
         this.listaUsuarios.push(novoPaciente);
     }
-
-}
     remove() {
         let nomeSobrenome = this.input('Digite o nome: \t');
         let user = this.listaUsuarios.find(u => u.nomeSobrenome == nomeSobrenome);
