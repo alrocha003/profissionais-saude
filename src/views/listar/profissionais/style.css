@@ -1,0 +1,10 @@
+header {
+    width: auto;
+    background-color: #f1f1f1;
+    min-height: 100px;
+}
+
+#title {
+    color: #008000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

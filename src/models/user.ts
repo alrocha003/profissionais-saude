@@ -12,7 +12,7 @@ class UserModel extends Schema {
     constructor(db: mongoose.Mongoose, name: String,
         ocupation: String, email: String, age: Number) {
         super();
-        this._id = 12333;
+        this._id = Math.random();
         this.name = name;
         this.ocupation = ocupation;
         this.email = email;

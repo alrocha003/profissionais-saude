@@ -6,25 +6,41 @@ const port = 3000;
 
 const db: Database = new Database();
 
-let user = new UserModel(db.db, 'Tais Virissimo Rocha', 'Empresária', 'taverissimo@gmail.com', 28);
+let user = new UserModel(db.db, 'Tais Tavares Verissimo Rocha', 'Empresária', 'taverissimo@gmail.com', 28);
 user.save();
+
 
 app.use(express.static('public'));
 app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
-app.get('/login', (reqquest: Request, response: Response) => {
+app.get('/login', (request: Request, response: Response) => {
     response.render('login', {
         subject: 'Pagina de login'
     });
 });
 
-app.get('/cadastrar', (req: Request, res: Response) => {
-    res.send('<h1 color="green">Cadastrar Usuários</h1>');
+app.get('/cadastrar', (request: Request, response: Response) => {
+    response.send('<h1 color="green">Cadastrar Usuários</h1>');
 });
 
-app.get('/listar', (req: Request, res: Response) => {
-    res.send('<h1 color="green">Listar Usuários</h1>');
+app.get('/listar', (request: Request, response: Response) => {
+    response.render('listar/profissionais', {
+        profissionals: [
+            {
+                'nome': 'Paulo',
+                'idade': 12
+            },
+            {
+                'nome': 'Jõao',
+                'idade': 15,
+            },
+            {
+                'nome': 'Marina',
+                'idade': 25,
+            }
+        ]
+    });
 });
 
 app.listen(port, () => {

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<link src="/dist/views/style/style.css" type="text/css">
+
+<head>
+    <title>Listar - Profissionais Saúde</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">Listar Profissionais</h1>
+    </header>
+</body>
+
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+    </tr>
+    <% for(let i=0; i < profissionals.length; i++) {%>
+        <tr>
+            <td>Nome: <%= profissionals[i].nome %>
+            </td>
+            <td>Idade: <%= profissionals[i].idade %>
+            </td>
+        </tr>
+        <% } %>
+</table>
+
+</html>
