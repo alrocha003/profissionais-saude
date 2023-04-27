@@ -12,18 +12,8 @@ app.get('/hello', (request, response) => {
   response.render('hello');
 });
 
-// const path = require('path');
-
-// app.route('/*')
-//   // eslint-disable-next-line prefer-arrow-callback, func-names
-//   .get(function (request, response) {
-//     // eslint-disable-next-line prefer-template
-//     response.sendFile(path.resolve(app.get() + '/login/login.ejs'));
-//   });
-
 app.get('/login', (req, res) => {
-  // eslint-disable-next-line no-path-concat, prefer-template
-  res.sendFile(__dirname + '/views/login/login.ejs');
+  res.render('login/login.ejs');
 });
 
 app.post('/login', urlencodedParser, (request, response) => {
