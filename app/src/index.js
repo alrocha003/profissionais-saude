@@ -8,12 +8,16 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.set('view engine', 'ejs');
 
-app.get('/hello', (request, response) => {
+app.get('/hello', (_request, response) => {
   response.render('hello');
 });
 
-app.get('/login', (req, res) => {
+app.get('/login', (_req, res) => {
   res.render('login/login.ejs');
+});
+
+app.get('/home', (_req, res) => {
+  res.render('pageHome/pageHome.ejs');
 });
 
 app.post('/login', urlencodedParser, (request, response) => {
