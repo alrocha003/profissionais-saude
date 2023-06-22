@@ -7,6 +7,7 @@ const PORT = 3001;
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
 
 app.get('/hello', (_request, response) => {
   response.render('hello');
